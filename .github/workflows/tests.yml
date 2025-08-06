@@ -14,7 +14,7 @@ env:
 
 jobs:
   core-and-interface-tests:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     strategy:
       matrix:
@@ -91,7 +91,7 @@ jobs:
           path: ./coverage.xml
 
   all-interfaces-tests:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     steps:
       - name: Cancel Previous Runs
@@ -141,7 +141,7 @@ jobs:
           path: ./coverage.xml
 
   qcut-tests:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     steps:
       - name: Cancel Previous Runs
@@ -194,7 +194,7 @@ jobs:
           path: ./coverage.xml
 
   qchem-tests:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     steps:
       - name: Cancel Previous Runs
@@ -240,7 +240,7 @@ jobs:
           path: ./coverage.xml
 
   device-tests:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     strategy:
       matrix:
@@ -306,7 +306,7 @@ jobs:
 
   upload-to-codecov:
       needs: [core-and-interface-tests, all-interfaces-tests, qcut-tests, qchem-tests, device-tests]
-      runs-on: ubuntu-latest
+      runs-on: blacksmith-4vcpu-ubuntu-2404
       steps:
         - name: Checkout
           uses: actions/checkout@v2
